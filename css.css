@@ -1,0 +1,244 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+body{text-align: center;font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;}
+ul,ol,li{ list-style: none;}
+a{text-decoration: none;color: #333;}
+input,button,img{border: none;vertical-align: middle;}
+body {background-color: white;
+
+}
+
+#header{background-color: white;
+    color: rgb(69, 49, 186);
+    text-align: center;
+    padding-left: 5px;
+    width: 100%;
+    height: 150px;
+}
+
+
+#nav{height:100px;
+    background-color:white;
+    color: rgb(69, 49, 186);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#imgTaille1{
+    height: 90px;
+    width: 200px;
+}
+
+#section{height: 500px;
+    width: auto;
+    margin:0 auto;
+}
+
+.wrap{
+    width: 1200px;
+    margin:0 auto;
+}
+
+.banner{
+    width: 100%;
+    height: 480px;
+    background-color:black;
+    position: relative;
+    margin:0 auto;
+    padding: auto;
+    
+}
+
+.banner-a{
+    width: 720px;
+    height: 480px;
+    margin: 0 auto;
+    background-image: url(image/decoration.png);
+    background-size: 100%;
+    animation: banner 40s linear infinite;
+    animation-delay: 3s;
+    position: relative;
+}
+.banner-a:hover{
+    animation-play-state: paused;
+}
+@keyframes banner{
+    0%{
+        background-image: url(image/decoration.png);
+    }
+    11%{
+        background-image: url(image/ameublement.png);
+    }
+    22%{
+        background-image: url(image/electromenager.png);
+    }
+    33%{
+        background-image: url(image/livres.png);
+    }
+    44%{
+        background-image: url(image/informatique.png);
+    }
+    55%{
+        background-image: url(image/vacances.png);
+    }
+    66%{
+        background-image: url(image/vetements.png);
+    }
+    77%{
+        background-image: url(image/voitures.png);
+    }
+    88%{
+        background-image: url(image/offres_emploi.png);
+    }
+    100%{
+        background-image: url(image/ventes_immo.png);
+    }
+}
+
+.banner-b{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 290px;
+    height: 480px;
+    padding: 0px 0;
+    background-color: lightgreen;
+}
+.banner-c{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 290px;
+    height: 480px;
+    padding:0px 0;
+    background-color:lightgreen;
+}
+
+.banner-b>ul>li{
+    height: 96px;
+    line-height: 96px;
+    text-align: left;
+    padding-left: 60px;
+    color: white;
+}
+.banner-c>ul>li{
+    height: 96px;
+    line-height: 96px;
+    text-align: left;
+    padding-left: 60px;
+    color: white;
+}
+.banner-b>ul>li:hover{
+    background-color: lightcyan;
+}
+.banner-c>ul>li:hover{
+    background-color: lightcyan;
+}
+
+.flash{
+    width: 100%;
+    height: 240px;
+    background-color:white;
+    position: relative;
+    margin: 20px auto;
+}
+.flash1{
+    position: absolute;
+    left: 0;
+    top:0 ;
+    width: 100px;
+    height: 240px;
+    padding:0px 0;
+    margin: 20px auto;
+}
+.flash1>p{
+    height: 240px;
+    line-height: 240px;
+    text-align: center;
+    padding-left: 5px;
+    background-color: lightcoral;
+    color: blanchedalmond;    
+}
+
+.flash2{
+    position: absolute;
+    left: 140px;
+    top:0 ;
+    width: 360px;
+    height: 240px;
+    padding:0px 0;
+    margin: 20px auto;
+}
+
+.flash3{
+    position: absolute;
+    left: 540px;
+    top:0 ;
+    width: 360px;
+    height: 240px;
+    padding:0px 0;
+    margin: 20px auto;
+}
+
+.flash4{
+    position: absolute;
+    right: 0;
+    top:0 ;
+    width: 360px;
+    height: 240px;
+    padding:0px 0;
+    margin: 20px auto;
+}
+
+#footer1{
+    width: 100%;
+    height: 100px;
+    margin: 20px auto;
+    padding: 5px;
+    position: absolute;
+    left: auto;
+    top: 1000px;
+}
+
+.mapicon{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 auto;
+    position: fixed;
+    right: 3px;
+    top: 300px;
+}
+
+.comtpicon{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 auto;
+    position: fixed;
+    right: 3px;
+    top: 230px;
+
+}
+
+.paniericon{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 auto;
+    position: fixed;
+    right: 5px;
+    top: 370px;
+
+}
+.parcouriricon{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 auto;
+    position: fixed;
+    right: 3px;
+    top: 440px;
+}
