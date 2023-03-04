@@ -33,36 +33,24 @@
     </div>
     <div id="nav" class="container">
       <div class="row">
+
+      <?php
+        $button=[
+          'accueil.php' => 'image/accueil.png',
+          "parcourir.php" =>'image/parcourir.png',
+          "notification.php" =>'image/notification.png',
+          "panier.php" =>'image/panier.png',
+          "compt.php"=>'image/compte.png'
+        ];
+      ?>
+      <?php foreach($button as $q=>$a){ ?>
         <div class="col-1"></div>
-        <div class="col-md-1" id="button1">
-          <a href="accueil.html"
-            ><img src="image/accueil.png" id="imgTaille1"
-          /></a>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-md-1 col-md-offset-1" id="button1">
-          <a href="parcourir.html"
-            ><img src="image/parcourir.png" id="imgTaille1"
-          /></a>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-md-1 col-md-offset-1" id="button1">
-          <a href="notification.html"
-            ><img src="image/notification.png" id="imgTaille1"
-          /></a>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-md-1 col-md-offset-1" id="button1">
-          <a href="panier.html"
-            ><img src="image/panier.png" id="imgTaille1"
-          /></a>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-md-1 col-md-offset-1" id="button1">
-          <a href="compte.html"
-            ><img src="image/compte.png" id="imgTaille1"
-          /></a>
-        </div>
+          <div class="col-md-1" id="button1">
+            <a href="<?php echo $q;?>">
+              <img src="<?php echo $a;?>" id="imgTaille1"/>
+            </a>
+          </div>
+      <?php } ?>
         <div class="col-2"></div>
       </div>
     </div>
@@ -81,41 +69,30 @@
     </div>
 
     <div class="fix_icon">
-      <div class="icon1">
-        <a href="accueil.html">
-          <span
-            class="iconfont icon-a-shouyezhuye"
-            style="font-size: 50px"
-          ></span>
+      <?php
+        $icon=[
+          "accueil.php" => 'iconfont icon-shouye',
+          "parcourir.php" => 'iconfont icon-gongneng',
+          "notification.php" => 'iconfont icon-xiaoxi2',
+          "panier.php" => 'iconfont icon-caigou',
+          "compt.php" => 'iconfont icon-wode',
+          "https://www.google.com/maps" => 'iconfont icon-weizhi'
+        ]
+      ?>
+
+      <?php foreach($icon as $w=>$e){?>
+        <div class="icon1">
+        <a href=" <?php echo $w;?> "> 
+        <span
+        class=" <?php echo $e ;?> "
+        style="font-size: 50px"
+        ></span>
         </a>
-      </div>
-      <div class="icon1">
-        <a href="parcourir.html">
-          <span
-            class="iconfont icon-a-gengduofenlei"
-            style="font-size: 48px"
-          ></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="panier.html">
-          <span class="iconfont icon-gouwuche" style="font-size: 48px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="compt.html">
-          <span class="iconfont icon-wode" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="https://www.google.com/maps">
-          <span
-            class="iconfont icon-a-faxianzhinanzhen"
-            style="font-size: 50px"
-          ></span>
-        </a>
-      </div>
+        </div>
+      <?php }?>
     </div>
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

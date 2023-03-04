@@ -50,40 +50,27 @@
     </div>
 
     <div class="fix_icon">
-      <div class="icon1">
-        <a href="accueil.html">
-          <span
-            class="iconfont icon-a-shouyezhuye"
-            style="font-size: 50px"
-          ></span>
+      <?php
+        $icon=[
+          "accueil.php" => 'iconfont icon-shouye',
+          "parcourir.php" => 'iconfont icon-gongneng',
+          "notification.php" => 'iconfont icon-xiaoxi2',
+          "panier.php" => 'iconfont icon-caigou',
+          "compt.php" => 'iconfont icon-wode',
+          "https://www.google.com/maps" => 'iconfont icon-weizhi'
+        ]
+      ?>
+
+      <?php foreach($icon as $w=>$e){?>
+        <div class="icon1">
+        <a href=" <?php echo $w;?> "> 
+        <span
+        class=" <?php echo $e; ?> "
+        style="font-size: 50px"
+        ></span>
         </a>
-      </div>
-      <div class="icon1">
-        <a href="parcourir.html">
-          <span
-            class="iconfont icon-a-gengduofenlei"
-            style="font-size: 48px"
-          ></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="panier.html">
-          <span class="iconfont icon-gouwuche" style="font-size: 48px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="compt.html">
-          <span class="iconfont icon-wode" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="https://www.google.com/maps">
-          <span
-            class="iconfont icon-a-faxianzhinanzhen"
-            style="font-size: 50px"
-          ></span>
-        </a>
-      </div>
+        </div>
+      <?php }?>
     </div>
 
     <script

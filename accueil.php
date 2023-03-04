@@ -36,29 +36,29 @@
                 <div class="banner-a"></div>
                 <div class="banner-b">
                     <ul>
-                        <li><a href="parcourir.html">tout_parcourir</a></li>
-                        <li><a href="ameublement.html">ameublement</a></li>
-                        <li><a href="electromenager.html">electromenager</a></li>
-                        <li><a href="livres.html">livres</a></li>
-                        <li><a href="informatique.html">informatique</a></li>
+                        <li><a href="parcourir.php">tout_parcourir</a></li>
+                        <li><a href="ameublement.php">ameublement</a></li>
+                        <li><a href="electromenager.php">electromenager</a></li>
+                        <li><a href="livres.php">livres</a></li>
+                        <li><a href="informatique.php">informatique</a></li>
                     </ul>
                 </div>
                 <div class="banner-c">
                     <ul>
-                        <li><a href="vacances.html">vacances</a></li>
-                        <li><a href="vetements.html">vetements</a></li>
-                        <li><a href="voitures.html">voitures</a></li>
-                        <li><a href="decoration.html">decoration</a></li>
-                        <li><a href="ventes_immo.html">ventes_immo</a></li>
+                        <li><a href="vacances.php">vacances</a></li>
+                        <li><a href="vetements.php">vetements</a></li>
+                        <li><a href="voitures.php">voitures</a></li>
+                        <li><a href="decoration.php">decoration</a></li>
+                        <li><a href="ventes_immo.php">ventes_immo</a></li>
                     </ul>
                 </div>
             </div> 
         </div>
         <div class="flash">
             <div class="flash1"><p>Ventes flash</p></div>
-            <div class="flash2"><a href="article_voiture.html"><image src="image/voitures.png" ></a></image></div>
-            <div class="flash3"><a href="article_livres.html"><image src="image/livres.png" ></image></a></div>
-            <div class="flash4"><a href="article_vetements.html"><image src="image/vetements.png" ></image></a></div>
+            <div class="flash2"><a href="article_voiture.php"><image src="image/voitures.png" ></a></image></div>
+            <div class="flash3"><a href="article_livres.php"><image src="image/livres.png" ></image></a></div>
+            <div class="flash4"><a href="article_vetements.php"><image src="image/vetements.png" ></image></a></div>
         </div>
     </div>
 
@@ -76,41 +76,28 @@
       </div>
   
       <div class="fix_icon">
+      <?php
+        $icon=[
+          "accueil.php" => 'iconfont icon-shouye',
+          "parcourir.php" => 'iconfont icon-gongneng',
+          "notification.php" => 'iconfont icon-xiaoxi2',
+          "panier.php" => 'iconfont icon-caigou',
+          "compt.php" => 'iconfont icon-wode',
+          "https://www.google.com/maps" => 'iconfont icon-weizhi'
+        ]
+      ?>
+
+      <?php foreach($icon as $w=>$e){?>
         <div class="icon1">
-          <a href="accueil.html">
-            <span
-              class="iconfont icon-a-shouyezhuye"
-              style="font-size: 50px"
-            ></span>
-          </a>
+        <a href=" <?php echo $w?> "> 
+        <span
+        class=" <?php echo $e ?> "
+        style="font-size: 50px"
+        ></span>
+        </a>
         </div>
-        <div class="icon1">
-          <a href="parcourir.html">
-            <span
-              class="iconfont icon-a-gengduofenlei"
-              style="font-size: 48px"
-            ></span>
-          </a>
-        </div>
-        <div class="icon1">
-          <a href="panier.html">
-            <span class="iconfont icon-gouwuche" style="font-size: 48px"></span>
-          </a>
-        </div>
-        <div class="icon1">
-          <a href="compt.html">
-            <span class="iconfont icon-wode" style="font-size: 50px"></span>
-          </a>
-        </div>
-        <div class="icon1">
-          <a href="https://www.google.com/maps">
-            <span
-              class="iconfont icon-a-faxianzhinanzhen"
-              style="font-size: 50px"
-            ></span>
-          </a>
-        </div>
-      </div>
+      <?php }?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
