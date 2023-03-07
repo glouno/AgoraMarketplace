@@ -41,19 +41,19 @@
         <div class="banner-b">
           <ul>
             <li><a href="parcourir.php">tout parcourir</a></li>
-            <li><a href="parcourir.php?type=ameublement">ameublement</a></li>
-            <li><a href="parcourir.php?type=electromenager">electromenager</a></li>
-            <li><a href="parcourir.php?type=livres">livres</a></li>
-            <li><a href="parcourir.php?type=informatique">informatique</a></li>
+            <li><a href="parcourir1.php?type='ameublement'">ameublement</a></li>
+            <li><a href="parcourir1.php?type='electromenager'">electromenager</a></li>
+            <li><a href="parcourir1.php?type='livres'">livres</a></li>
+            <li><a href="parcourir1.php?type='informatique'">informatique</a></li>
           </ul>
         </div>
         <div class="banner-c">
           <ul>
-            <li><a href="parcourir.php?type=vacances">vacances</a></li>
-            <li><a href="parcourir.php?type=vetements">vetements</a></li>
-            <li><a href="parcourir.php?type=voitures">voitures</a></li>
-            <li><a href="parcourir.php?type=decoration">decoration</a></li>
-            <li><a href="parcourir.php?type=ventes immo">ventes immo</a></li>
+            <li><a href="parcourir1.php?type='vacances'">vacances</a></li>
+            <li><a href="parcourir1.php?type='vetements'">vetements</a></li>
+            <li><a href="parcourir1.php?type='voitures'">voitures</a></li>
+            <li><a href="parcourir1.php?type='decoration'">decoration</a></li>
+            <li><a href="parcourir1.php?type='ventes immo'">ventes immo</a></li>
           </ul>
         </div>
       </div>
@@ -63,16 +63,15 @@
         <p>Ventes flash</p>
       </div>
       <div class="flash2"><a href="mod_article.php?id=1">
-          <image src="image/bmw x1/2.jpeg"; width='360';
-          height='240';>
+          <image src="image/bmw x1/2.jpeg" ; width='360' ; height='240' ;>
         </a></image>
       </div>
       <div class="flash3"><a href="mod_article.php?id=2">
-          <image src="https://th.bing.com/th/id/OIP.ojLS3epQ4kT0Pb6VXuPMOAHaE8?w=228&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"; width='360';
-          height='240';></image>
+          <image src="https://th.bing.com/th/id/OIP.ojLS3epQ4kT0Pb6VXuPMOAHaE8?w=228&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            ; width='360' ; height='240' ;></image>
         </a></div>
       <div class="flash4"><a href="mod_article.php?id=4">
-          <image src="image/lisa.png"; height='240'></image>
+          <image src="image/lisa.png" ; height='240'></image>
         </a></div>
     </div>
   </div>
