@@ -44,16 +44,16 @@
             <div class="col-1">
                 <p><b>class:</b></p>
             </div>
-            <div class="col-1"><a href="parcourir1.php?type='1'&type_prix='rare'&ordre='asc'">rares</a></div>
-            <div class="col-2"><a href="parcourir1.php?type_prix='gamme'&type='1'">hautes de gamme</a></div>
-            <div class="col-1"><a href="parcourir1.php?type_prix='normal'&type='1'">réguliers</a></div>
+            <div class="col-1"><a href="parcourir1.php?type=1">rares</a></div>
+            <div class="col-2"><a href="parcourir1.php?type=2">hautes de gamme</a></div>
+            <div class="col-1"><a href="parcourir1.php?type=3">réguliers</a></div>
         </div>
         <div class="row">
             <div class="col-1">
                 <p><b>prix:</b></p>
             </div>
-            <div class="col-1"><a href="parcourir1.php?">Ascendante</a></div>
-            <div class="col-1"><a href="parcourir2.php?">Descendante</a></div>
+            <div class="col-1"><a href="parcourir1.php?type=0">Ascendante</a></div>
+            <div class="col-1"><a href="parcourir2.php?type=0">Descendante</a></div>
         </div>
     </div>
     <br><br><br>
@@ -70,10 +70,11 @@
             if ($_GET['type'] == 0) {
                 $sql = "SELECT * FROM produits";
             } elseif ($_GET['type'] == 1) {
-                $sql = "SELECT * FROM produits WHERE type_prix=   " . $_GET['type_prix'] . "       ";
-                print_r($_GET['type_prix']);
+                $sql = "SELECT * FROM produits WHERE type_prix= 'rare' ";
             } elseif ($_GET['type'] == 2) {
-                $sql = "SELECT * FROM produits ORDER BY prix  " . $_GET['ordre'] . "";
+                $sql = "SELECT * FROM produits WHERE type_prix= 'gamme' ";
+            } elseif ($_GET['type'] == 3) {
+                $sql = "SELECT * FROM produits WHERE type_prix= 'normal' ";
             } else {
                 $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . "       ";
             }
