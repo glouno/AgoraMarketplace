@@ -28,7 +28,7 @@
       <div class="col-1">
         <p><strong>type:</strong></p>
       </div>
-      <div class="col-1"><a href="parcourir1.php?type='tous'">tout parcourir</a></div>
+      <div class="col-1"><a href="parcourir1.php?type=0">tout parcourir</a></div>
       <div class="col-1"><a href="parcourir1.php?type='ameublement'">ameublement</a></div>
       <div class="col-1"><a href="parcourir1.php?type='electromenager'">electromenager</a></div>
       <div class="col-1"><a href="parcourir1.php?type='livres'">livres</a></div>
@@ -44,16 +44,17 @@
       <div class="col-1">
         <p><b>class:</b></p>
       </div>
-      <div class="col-1"><a href="parcourir1.php?type_prix='rare'">rares</a></div>
-      <div class="col-2"><a href="parcourir1.php?type_prix='gamme'">hautes de gamme</a></div>
-      <div class="col-1"><a href="parcourir1.php?type_prix='normal'">réguliers</a></div>
+      <div class="col-1"><a href="parcourir1.php?type=1">rares</a></div>
+      <div class="col-2"><a href="parcourir1.php?type=2">hautes de gamme</a></div>
+      <div class="col-1"><a href="parcourir1.php?type=3">réguliers</a></div>
     </div>
     <div class="row">
       <div class="col-1">
         <p><b>prix:</b></p>
       </div>
-      <div class="col-1"><a href="parcourir1.php?ordre='a'">Ascendante</a></div>
-      <div class="col-1"><a href="parcourir1.php?ordre='d'">Descendante</a></div>
+      <div class="col-1"><a href="parcourir3.php?type=0">Ascendante</a></div>
+      <div class="col-1"><a href="parcourir2.php?type=0">Descendante</a></div>
+      <div class="col-1"><a href="parcourir1.php?type=0">Annuler</a></div>
     </div>
   </div>
   <br><br><br>
@@ -67,6 +68,7 @@
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
+
       $sql = "SELECT * FROM produits";
       $result = mysqli_query($db_handle, $sql);
       //$data = mysqli_fetch_assoc($result);

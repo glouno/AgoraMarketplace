@@ -28,25 +28,25 @@
             <div class="col-1">
                 <p><strong>type:</strong></p>
             </div>
-            <div class="col-1"><a href="parcourir1.php?type=0">tout parcourir</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='ameublement'">ameublement</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='electromenager'">electromenager</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='livres'">livres</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='informatique'">informatique</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='vacances'">vacances</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='vetements'">vetements</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='voitures'">voitures</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='decoration'">decoration</a></div>
-            <div class="col-1"><a href="parcourir1.php?type='ventes immo'">ventes immo</a></div>
+            <div class="col-1"><a href="parcourir3.php?type=0">tout parcourir</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='ameublement'">ameublement</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='electromenager'">electromenager</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='livres'">livres</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='informatique'">informatique</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='vacances'">vacances</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='vetements'">vetements</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='voitures'">voitures</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='decoration'">decoration</a></div>
+            <div class="col-1"><a href="parcourir3.php?type='ventes immo'">ventes immo</a></div>
             <div class="col-1"></div>
         </div>
         <div class="row">
             <div class="col-1">
                 <p><b>class:</b></p>
             </div>
-            <div class="col-1"><a href="parcourir1.php?type=1">rares</a></div>
-            <div class="col-2"><a href="parcourir1.php?type=2">hautes de gamme</a></div>
-            <div class="col-1"><a href="parcourir1.php?type=3">réguliers</a></div>
+            <div class="col-1"><a href="parcourir3.php?type=1">rares</a></div>
+            <div class="col-2"><a href="parcourir3.php?type=2">hautes de gamme</a></div>
+            <div class="col-1"><a href="parcourir3.php?type=3">réguliers</a></div>
         </div>
         <div class="row">
             <div class="col-1">
@@ -69,15 +69,15 @@
         //si le BDD existe, faire le traitement
         if ($db_found) {
             if ($_GET['type'] == 0) {
-                $sql = "SELECT * FROM produits";
+                $sql = "SELECT * FROM produits ORDER BY prix asc ";
             } elseif ($_GET['type'] == 1) {
-                $sql = "SELECT * FROM produits WHERE type_prix= 'rare' ";
+                $sql = "SELECT * FROM produits WHERE type_prix=  'rare' ORDER BY prix asc";
             } elseif ($_GET['type'] == 2) {
-                $sql = "SELECT * FROM produits WHERE type_prix= 'gamme' ";
+                $sql = "SELECT * FROM produits WHERE type_prix=  'gamme' ORDER BY prix asc";
             } elseif ($_GET['type'] == 3) {
-                $sql = "SELECT * FROM produits WHERE type_prix= 'normal' ";
+                $sql = "SELECT * FROM produits WHERE type_prix=  'normal' ORDER BY prix asc";
             } else {
-                $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . "       ";
+                $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . " ORDER BY prix desc   ";
             }
             $result = mysqli_query($db_handle, $sql);
             //$data = mysqli_fetch_assoc($result);

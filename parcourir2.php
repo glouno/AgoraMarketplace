@@ -52,8 +52,9 @@
       <div class="col-1">
         <p><b>prix:</b></p>
       </div>
-      <div class="col-1"><a href="parcourir1.php?type=0">Ascendante</a></div>
+      <div class="col-1"><a href="parcourir3.php?type=0">Ascendante</a></div>
       <div class="col-1"><a href="parcourir2.php?type=0">Descendante</a></div>
+      <div class="col-1"><a href="parcourir1.php?type=0">Annuler</a></div>
     </div>
   </div>
   <br><br><br>
