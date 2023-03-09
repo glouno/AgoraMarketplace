@@ -23,11 +23,12 @@
       </div>
     </div>
   </div>
-
-  <div id="nav" class="container-fluid" style="border-radius: 60px">
-    <div class="row " style="border: 3px lightcoral outset; border-radius: 10px;">
-      <div class="col-1"></div>
-      <div class="col-1"><a href="parcourir.php">tout parcourir</a></div>
+  <div id="nav" class="container-fluid" style="border: 3px lightcoral outset; border-radius: 10px;">
+    <div class="row ">
+      <div class="col-1">
+        <p><strong>type:</strong></p>
+      </div>
+      <div class="col-1"><a href="parcourir1.php?type='tous'">tout parcourir</a></div>
       <div class="col-1"><a href="parcourir1.php?type='ameublement'">ameublement</a></div>
       <div class="col-1"><a href="parcourir1.php?type='electromenager'">electromenager</a></div>
       <div class="col-1"><a href="parcourir1.php?type='livres'">livres</a></div>
@@ -39,8 +40,23 @@
       <div class="col-1"><a href="parcourir1.php?type='ventes immo'">ventes immo</a></div>
       <div class="col-1"></div>
     </div>
+    <div class="row">
+      <div class="col-1">
+        <p><b>class:</b></p>
+      </div>
+      <div class="col-1"><a href="parcourir1.php?type_prix='rare'">rares</a></div>
+      <div class="col-2"><a href="parcourir1.php?type_prix='gamme'">hautes de gamme</a></div>
+      <div class="col-1"><a href="parcourir1.php?type_prix='normal'">réguliers</a></div>
+    </div>
+    <div class="row">
+      <div class="col-1">
+        <p><b>prix:</b></p>
+      </div>
+      <div class="col-1"><a href="parcourir1.php?ordre='a'">Ascendante</a></div>
+      <div class="col-1"><a href="parcourir1.php?ordre='d'">Descendante</a></div>
+    </div>
   </div>
-
+  <br><br><br>
   <div id="section" class="container">
     <?php
     //identifier le nom de base de données

@@ -23,11 +23,12 @@
             </div>
         </div>
     </div>
-
-    <div id="nav" class="container-fluid" style="border-radius: 60px">
-        <div class="row " style="border: 3px lightcoral outset; border-radius: 10px;">
-            <div class="col-1"></div>
-            <div class="col-1"><a href="parcourir.php">tout parcourir</a></div>
+    <div id="nav" class="container-fluid" style="border: 3px lightcoral outset; border-radius: 10px;">
+        <div class="row ">
+            <div class="col-1">
+                <p><strong>type:</strong></p>
+            </div>
+            <div class="col-1"><a href="parcourir1.php?type=0">tout parcourir</a></div>
             <div class="col-1"><a href="parcourir1.php?type='ameublement'">ameublement</a></div>
             <div class="col-1"><a href="parcourir1.php?type='electromenager'">electromenager</a></div>
             <div class="col-1"><a href="parcourir1.php?type='livres'">livres</a></div>
@@ -39,8 +40,23 @@
             <div class="col-1"><a href="parcourir1.php?type='ventes immo'">ventes immo</a></div>
             <div class="col-1"></div>
         </div>
+        <div class="row">
+            <div class="col-1">
+                <p><b>class:</b></p>
+            </div>
+            <div class="col-1"><a href="parcourir1.php?type='1'&type_prix='rare'&ordre='asc'">rares</a></div>
+            <div class="col-2"><a href="parcourir1.php?type_prix='gamme'&type='1'">hautes de gamme</a></div>
+            <div class="col-1"><a href="parcourir1.php?type_prix='normal'&type='1'">réguliers</a></div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <p><b>prix:</b></p>
+            </div>
+            <div class="col-1"><a href="parcourir1.php?ordre='asc'&type='2'">Ascendante</a></div>
+            <div class="col-1"><a href="parcourir1.php?ordre='desc'&type='2'">Descendante</a></div>
+        </div>
     </div>
-
+    <br><br><br>
     <div id="section" class="container">
         <?php
         //identifier le nom de base de données
@@ -51,7 +67,16 @@
         $db_found = mysqli_select_db($db_handle, $database);
         //si le BDD existe, faire le traitement
         if ($db_found) {
-            $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . "       ";
+            if ($_GET['type'] == 0) {
+                $sql = "SELECT * FROM produits";
+            } elseif ($_GET['type'] == 1) {
+                $sql = "SELECT * FROM produits WHERE type_prix=   " . $_GET['type_prix'] . "       ";
+                print_r($_GET['type_prix']);
+            } elseif ($_GET['type'] == 2) {
+                $sql = "SELECT * FROM produits ORDER BY prix  " . $_GET['ordre'] . "";
+            } else {
+                $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . "       ";
+            }
             $result = mysqli_query($db_handle, $sql);
             //$data = mysqli_fetch_assoc($result);
             while ($data = mysqli_fetch_assoc($result)) {
