@@ -12,4 +12,8 @@ create table produits
         unique (id)
 );
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> e968f69a0617605f3e0adcd2cde6661338b779d6
