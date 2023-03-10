@@ -89,7 +89,7 @@
       <?php
         $icon=[
           "accueil.php" => 'iconfont icon-shouye',
-          "parcourir.php" => 'iconfont icon-gongneng',
+          "parcourir1.php" => 'iconfont icon-gongneng',
           "notification.php" => 'iconfont icon-xiaoxi2',
           "panier.php" => 'iconfont icon-caigou',
           "compt.php" => 'iconfont icon-wode',
