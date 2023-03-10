@@ -40,7 +40,7 @@
         <div class="banner-a"></div>
         <div class="banner-b">
           <ul>
-            <li><a href="parcourir.php">tout parcourir</a></li>
+            <li><a href="parcourir1.php?type=0">tout parcourir</a></li>
             <li><a href="parcourir1.php?type='ameublement'">ameublement</a></li>
             <li><a href="parcourir1.php?type='electromenager'">electromenager</a></li>
             <li><a href="parcourir1.php?type='livres'">livres</a></li>
