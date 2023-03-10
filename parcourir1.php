@@ -54,7 +54,7 @@
             </div>
             <div class="col-1"><a href="parcourir3.php?type=0">Ascendante</a></div>
             <div class="col-1"><a href="parcourir2.php?type=0">Descendante</a></div>
-            <div class="col-1"><a href="parcourir1.php?type=0">Annuler</a></div>
+            <div class="col-1"><a href="parcourir1.php?type=0">Normal</a></div>
         </div>
     </div>
     <br><br><br>
@@ -117,7 +117,7 @@
             </a>
         </div>
         <div class="icon1">
-            <a href="parcourir.php">
+            <a href="parcourir1.php">
                 <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
             </a>
         </div>

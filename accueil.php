@@ -96,7 +96,7 @@
       </a>
     </div>
     <div class="icon1">
-      <a href="parcourir.php">
+      <a href="parcourir1.php">
         <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
       </a>
     </div>
