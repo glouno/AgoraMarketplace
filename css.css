@@ -310,3 +310,10 @@ body {
   border-radius: 20px;
 }
 
+.comptbutton {
+  padding: 20px;
+  height: 200px;
+  background-color: #71b7e6;
+  text-align: center;
+  line-height: 80px;
+}

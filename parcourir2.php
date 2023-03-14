@@ -71,11 +71,11 @@
       if ($_GET['type'] == 0) {
         $sql = "SELECT * FROM produits ORDER BY prix desc ";
       } elseif ($_GET['type'] == 1) {
-        $sql = "SELECT * FROM produits WHERE type_prix=  'rare' ORDER BY prix desc ";
+        $sql = "SELECT * FROM produits WHERE type_prix=  'Article rare' ORDER BY prix desc ";
       } elseif ($_GET['type'] == 2) {
-        $sql = "SELECT * FROM produits WHERE type_prix=  'gamme' ORDER BY prix desc";
+        $sql = "SELECT * FROM produits WHERE type_prix=  'Article haut de gamm' ORDER BY prix desc";
       } elseif ($_GET['type'] == 3) {
-        $sql = "SELECT * FROM produits WHERE type_prix=  'normal' ORDER BY prix desc";
+        $sql = "SELECT * FROM produits WHERE type_prix=  'Article régulier' ORDER BY prix desc";
       } else {
         $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . " ORDER BY prix desc   ";
       }
@@ -88,7 +88,7 @@
         echo '<div class="col-1"></div> ';
         echo '<div class="col-7" style="text-align: left;">';
         echo '<br><h1>' . $data['nom'] . '</h1><br>';
-        echo '<h2>prix:' . $data['prix'] . '</h2>';
+        echo '<h2>prix:' . $data['prix'] . '€</h2>';
         echo '</div></div><br></a>';
       }
     } //end else //fermer la connection 

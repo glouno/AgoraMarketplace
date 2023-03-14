@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div id="nav" class="container" style="height: 400px">
+    <div id="nav" class="container" style="height: 600px">
       <div class="row">
         <div class="col-4">
           <img src="<?php echo $data['image'] ?>" alt="none" width="480px" />
@@ -56,7 +56,7 @@
         <div
           class="col-7"
           style="
-            height: 400px;
+            height: 500px;
             background-color: rgb(244, 241, 237);
             border: 3px rgb(155, 155, 155) outset;
             border-radius: 10px;
