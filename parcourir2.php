@@ -52,9 +52,9 @@
       <div class="col-1">
         <p><b>prix:</b></p>
       </div>
-      <div class="col-1"><a href="parcourir3.php?type=0">Ascendante</a></div>
-      <div class="col-1"><a href="parcourir2.php?type=0">Descendante</a></div>
-      <div class="col-1"><a href="parcourir1.php?type=0">Normal</a></div>
+      <div class="col-1"><a href="parcourir3.php?">Ascendante</a></div>
+      <div class="col-1"><a href="parcourir2.php?">Descendante</a></div>
+      <div class="col-1"><a href="parcourir1.php?">Normal</a></div>
     </div>
   </div>
   <br><br><br>
@@ -68,16 +68,32 @@
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
-      if ($_GET['type'] == 0) {
-        $sql = "SELECT * FROM produits ORDER BY prix desc ";
-      } elseif ($_GET['type'] == 1) {
-        $sql = "SELECT * FROM produits WHERE type_prix=  'Article rare' ORDER BY prix desc ";
-      } elseif ($_GET['type'] == 2) {
-        $sql = "SELECT * FROM produits WHERE type_prix=  'Article haut de gamm' ORDER BY prix desc";
-      } elseif ($_GET['type'] == 3) {
-        $sql = "SELECT * FROM produits WHERE type_prix=  'Article régulier' ORDER BY prix desc";
+      if (isset($_GET['search'])) {
+        $search = $_GET['search'];
       } else {
-        $sql = "SELECT * FROM produits WHERE types=   " . $_GET['type'] . " ORDER BY prix desc   ";
+        $search = 0;
+      }
+      if (isset($_GET['type'])) {
+        $type = $_GET['type'];
+      } elseif (isset($_GET['type_prix'])) {
+        $type = $_GET['type_prix'];
+      } else {
+        $type = 0;
+      }
+      if (isset($type)) {
+        if ($type && $search == 0) {
+          $sql = "SELECT * FROM produits";
+        } elseif (isset($_GET['type_prix'])) {
+          $sql = "SELECT * FROM produits WHERE type_prix=  $type order by prix asc";
+        } elseif (isset($_GET['type'])) {
+          $sql = "SELECT * FROM produits WHERE types= $type order by prix asc";
+        } elseif (isset($_GET['search'])) {
+          $sql = "SELECT * FROM produits WHERE nom LIKE '%$search%' order by prix asc";
+        } else {
+          $sql = "SELECT * FROM produits";
+        }
+      } else {
+        $sql = "SELECT * FROM produits";
       }
       $result = mysqli_query($db_handle, $sql);
       //$data = mysqli_fetch_assoc($result);
