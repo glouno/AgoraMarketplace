@@ -33,19 +33,45 @@
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
-                if (isset($_GET['id_client'])) {
+                if (isset($_GET['id_client']) && !isset($_GET['sup'])) {
                     $sql = "select id_produit, nom ,prix,image,id_client from panier,produits where panier.id_produit = produits.id and id_client=" . $_GET['id_client'] . "";
                     $result = mysqli_query($db_handle, $sql);
                     //$data = mysqli_fetch_assoc($result);
                     while ($data = mysqli_fetch_assoc($result)) {
-                        echo '<a href="mod_article.php?id=' . $data['id_produit'] . '&id_client=' . $_GET['id_client'] . '">';
+
                         echo '<div class="row">';
                         echo '<div class="col-4"><img src="' . $data['image'] . '" width="360px" height="240px"></div>';
                         echo '<div class="col-1"></div> ';
-                        echo '<div class="col-7" style="text-align: left;">';
+                        echo '<div class="col-5" style="text-align: left;">';
                         echo '<br><h1>' . $data['nom'] . '</h1><br>';
                         echo '<h2>prix:' . $data['prix'] . '€</h2>';
-                        echo '</div></div><br></a>';
+                        echo '</div>';
+                        echo '<div class="col-2">';
+                        echo '<a href="panier.php?id_client=' . $_GET['id_client'] . "&sup=" . $data['id_produit'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</div></a><br>';
+
+                    }
+                } elseif (isset($_GET['id_client']) && isset($_GET['sup'])) {
+                    $sql = "DELETE FROM panier WHERE id_client=" . $_GET['id_client'] . " and id_produit=" . $_GET['sup'] . "";
+                    $result = mysqli_query($db_handle, $sql);
+                    $sql = "select id_produit, nom ,prix,image,id_client from panier,produits where panier.id_produit = produits.id and id_client=" . $_GET['id_client'] . "";
+                    $result = mysqli_query($db_handle, $sql);
+                    //$data = mysqli_fetch_assoc($result);
+                    while ($data = mysqli_fetch_assoc($result)) {
+
+                        echo '<div class="row">';
+                        echo '<div class="col-4"><img src="' . $data['image'] . '" width="360px" height="240px"></div>';
+                        echo '<div class="col-1"></div> ';
+                        echo '<div class="col-5" style="text-align: left;">';
+                        echo '<br><h1>' . $data['nom'] . '</h1><br>';
+                        echo '<h2>prix:' . $data['prix'] . '€</h2>';
+                        echo '</div>';
+                        echo '<div class="col-2">';
+                        echo '<a href="panier.php?id_client=' . $_GET['id_client'] . "&sup=" . $data['id_produit'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</div></a><br>';
+
                     }
                 } else {
                     echo "erreur";
@@ -55,6 +81,19 @@
             mysqli_close($db_handle); ?>
 
         </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <a href="paiement.php?id_client=<?php echo $_GET['id_client'] ?>">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Payer</button>
+                    </a>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+        <br>
 
         <div id="footer" class="container">
             <footer>
@@ -101,7 +140,8 @@
                 </a>
             </div>
         </div>
-        <div class=""></div>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
             integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

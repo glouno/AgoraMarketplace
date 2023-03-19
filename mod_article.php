@@ -97,7 +97,9 @@
               <input type="hidden" name="id_client" value="<?php echo $id_client ?>">
               <input type="hidden" name="id_produit" value="<?php echo $_GET['id'] ?>">
               <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-              <input type="submit" value="Ajouter au panier">
+              <button id="pay2" type='submit'>
+              <h5 class="buttonmot">Ajouter au panier</h5>
+            </button>
             </form>
           </div>
           <br />
@@ -108,9 +110,14 @@
           </div>
           <br />
           <div class="paybutton">
-            <button id="pay3 " onclick="">
+          <form action="paiement.php" method="get">
+              <input type="hidden" name="id_client" value="<?php echo $id_client ?>">
+              <input type="hidden" name="id_produit" value="<?php echo $_GET['id'] ?>">
+              <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+              <button id="pay2" type='submit'>
               <h5 class="buttonmot">Achat immédiat</h5>
             </button>
+            </form>
           </div>
         </div>
       </div>
