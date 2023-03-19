@@ -41,33 +41,59 @@
                 <div class="col-1">
                     <p><strong>type:</strong></p>
                 </div>
-                <div class="col-1"><a href="parcourir1.php?">tout parcourir</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='ameublement'">ameublement</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='electromenager'">electromenager</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='livres'">livres</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='informatique'">informatique</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='vacances'">vacances</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='vetements'">vetements</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='voitures'">voitures</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='decoration'">decoration</a></div>
-                <div class="col-1"><a href="parcourir1.php?type='ventes immo'">ventes immo</a></div>
+                <div class="col-1"><a href="parcourir1.php?&id_client=<?php echo $_GET['id_client'] ?>">tout
+                        parcourir</a></div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='ameublement'&id_client=<?php echo $_GET['id_client'] ?>">ameublement</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='electromenager'&id_client=<?php echo $_GET['id_client'] ?>">electromenager</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='livres'&id_client=<?php echo $_GET['id_client'] ?>">livres</a></div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='informatique'&id_client=<?php echo $_GET['id_client'] ?>">informatique</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='vacances'&id_client=<?php echo $_GET['id_client'] ?>">vacances</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='vetements'&id_client=<?php echo $_GET['id_client'] ?>">vetements</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='voitures'&id_client=<?php echo $_GET['id_client'] ?>">voitures</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='decoration'&id_client=<?php echo $_GET['id_client'] ?>">decoration</a>
+                </div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type='ventes immo'&id_client=<?php echo $_GET['id_client'] ?>">ventes
+                        immo</a></div>
                 <div class="col-1"></div>
             </div>
             <div class="row">
                 <div class="col-1">
                     <p><b>class:</b></p>
                 </div>
-                <div class="col-1"><a href="parcourir1.php?type_prix='Article rare'">rares</a></div>
-                <div class="col-2"><a href="parcourir1.php?type_prix='Article haut de gamm'">hautes de gamme</a></div>
-                <div class="col-1"><a href="parcourir1.php?type_prix='Article régulier'">réguliers</a></div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type_prix='Article rare'&id_client=<?php echo $_GET['id_client'] ?>">rares</a>
+                </div>
+                <div class="col-2"><a
+                        href="parcourir1.php?type_prix='Article haut de gamm'&id_client=<?php echo $_GET['id_client'] ?>">hautes
+                        de gamme</a></div>
+                <div class="col-1"><a
+                        href="parcourir1.php?type_prix='Article régulier'&id_client=<?php echo $_GET['id_client'] ?>">réguliers</a>
+                </div>
             </div>
             <div class="row">
                 <div class="col-1">
                     <p><b>prix:</b></p>
                 </div>
-                <div class="col-1"><a href="parcourir2.php?">Ascendante</a></div>
-                <div class="col-1"><a href="parcourir3.php?">Descendante</a></div>
-                <div class="col-1"><a href="parcourir1.php?">Normal</a></div>
+                <div class="col-1"><a href="parcourir2.php?&id_client=<?php echo $_GET['id_client'] ?>">Ascendante</a>
+                </div>
+                <div class="col-1"><a href="parcourir3.php?&id_client=<?php echo $_GET['id_client'] ?>">Descendante</a>
+                </div>
+                <div class="col-1"><a href="parcourir1.php?&id_client=<?php echo $_GET['id_client'] ?>">Normal</a></div>
             </div>
         </div>
         <br><br><br>
@@ -112,7 +138,7 @@
                 $result = mysqli_query($db_handle, $sql);
                 //$data = mysqli_fetch_assoc($result);
                 while ($data = mysqli_fetch_assoc($result)) {
-                    echo '<a href="mod_article.php?id=' . $data['id'] . '">';
+                    echo '<a href="mod_article.php?id=' . $data['id'] . '&id_client=' . $_GET['id_client'] . '">';
                     echo '<div class="row">';
                     echo '<div class="col-4"><img src="' . $data['image'] . '" width="360px" height="240px"></div>';
                     echo '<div class="col-1"></div> ';
@@ -123,9 +149,8 @@
                 }
             }
             //end else //fermer la connection 
-            ?>
-            <?php mysqli_close($db_handle);
-            ?>
+            mysqli_close($db_handle); ?>
+
         </div>
 
         <div id="footer" class="container">
@@ -143,27 +168,27 @@
 
         <div class="fix_icon">
             <div class="icon1">
-                <a href="accueil.php">
+                <a href="accueil.php?id_client=<?php echo $_GET['id_client'] ?>">
                     <span class="iconfont icon-shouye" style="font-size: 50px"></span>
                 </a>
             </div>
             <div class="icon1">
-                <a href="parcourir1.php">
+                <a href="parcourir1.php?id_client=<?php echo $_GET['id_client'] ?>">
                     <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
                 </a>
             </div>
             <div class="icon1">
-                <a href="notification.php">
+                <a href="notification.php?id_client=<?php echo $_GET['id_client'] ?>">
                     <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
                 </a>
             </div>
             <div class="icon1">
-                <a href="panier.php">
+                <a href="panier.php?id_client=<?php echo $_GET['id_client'] ?>">
                     <span class="iconfont icon-caigou" style="font-size: 50px"></span>
                 </a>
             </div>
             <div class="icon1">
-                <a href="compt.php">
+                <a href="compt.php?id_client=<?php echo $_GET['id_client'] ?>">
                     <span class="iconfont icon-wode" style="font-size: 50px"></span>
                 </a>
             </div>

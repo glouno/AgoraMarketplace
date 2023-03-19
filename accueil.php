@@ -30,7 +30,7 @@
         d’acheter des articles en vente sur le site, de faire une transaction client-vendeur sur un article
         (probablement avec un défaut mineur) pour négocier un prix acceptable au client et au vendeur, et
         également pour un client de mettre sa meilleure offre dans un item dont plusieurs acheteurs
-        voudraient l'acheter.</p>
+        voudraient l’acheter.</p>
     </div>
   </div>
 
@@ -40,20 +40,26 @@
         <div class="banner-a"></div>
         <div class="banner-b">
           <ul>
-            <li><a href="parcourir1.php?type=0">tout parcourir</a></li>
-            <li><a href="parcourir1.php?type='ameublement'">ameublement</a></li>
-            <li><a href="parcourir1.php?type='electromenager'">electromenager</a></li>
-            <li><a href="parcourir1.php?type='livres'">livres</a></li>
-            <li><a href="parcourir1.php?type='informatique'">informatique</a></li>
+            <li><a href="parcourir1.php?type=0&id_client=<?php echo $_GET['id_client'] ?>">tout parcourir</a></li>
+            <li><a href="parcourir1.php?type='ameublement'&id_client=<?php echo $_GET['id_client'] ?>">ameublement</a>
+            </li>
+            <li><a
+                href="parcourir1.php?type='electromenager'&id_client=<?php echo $_GET['id_client'] ?>">electromenager</a>
+            </li>
+            <li><a href="parcourir1.php?type='livres'&id_client=<?php echo $_GET['id_client'] ?>">livres</a></li>
+            <li><a href="parcourir1.php?type='informatique'&id_client=<?php echo $_GET['id_client'] ?>">informatique</a>
+            </li>
           </ul>
         </div>
         <div class="banner-c">
           <ul>
-            <li><a href="parcourir1.php?type='vacances'">vacances</a></li>
-            <li><a href="parcourir1.php?type='vetements'">vetements</a></li>
-            <li><a href="parcourir1.php?type='voitures'">voitures</a></li>
-            <li><a href="parcourir1.php?type='decoration'">decoration</a></li>
-            <li><a href="parcourir1.php?type='ventes immo'">ventes immo</a></li>
+            <li><a href="parcourir1.php?type='vacances'&id_client=<?php echo $_GET['id_client'] ?>">vacances</a></li>
+            <li><a href="parcourir1.php?type='vetements'&id_client=<?php echo $_GET['id_client'] ?>">vetements</a></li>
+            <li><a href="parcourir1.php?type='voitures'&id_client=<?php echo $_GET['id_client'] ?>">voitures</a></li>
+            <li><a href="parcourir1.php?type='decoration'&id_client=<?php echo $_GET['id_client'] ?>">decoration</a>
+            </li>
+            <li><a href="parcourir1.php?type='ventes immo'&id_client=<?php echo $_GET['id_client'] ?>">ventes immo</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -62,20 +68,22 @@
       <div class="flash1">
         <p>Ventes flash</p>
       </div>
-      <div class="flash2"><a href="mod_article.php?id=1">
-          <image src="image/bmw x1/2.jpeg" ; width='360' ; height='240' ;>
+      <div class="flash2"><a href="mod_article.php?id=3">
+          <image src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41RwX0kKRAL._AC_SX679_.jpg"
+            ; width='360' ; height='240' ;>
         </a></image>
       </div>
-      <div class="flash3"><a href="mod_article.php?id=2">
-          <image src="https://th.bing.com/th/id/OIP.ojLS3epQ4kT0Pb6VXuPMOAHaE8?w=228&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+      <div class="flash3"><a href="mod_article.php?id=5">
+          <image src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/415UI10lKML._AC_SX679_.jpg"
             ; width='360' ; height='240' ;></image>
         </a></div>
-      <div class="flash4"><a href="mod_article.php?id=4">
-          <image src="image/lisa.png" ; height='240'></image>
+      <div class="flash4"><a href="mod_article.php?id=17">
+          <image src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61lYIKPieDL._AC_SL1500_.jpg"
+            ; height='240'></image>
         </a></div>
     </div>
   </div>
-
+  <br><br><br>
   <div id="footer" class="container">
     <footer>
       <small>
@@ -87,47 +95,51 @@
         <p align="center">copyright &copy;2023 | lstest update:28-02-2023</p>
       </small>
     </footer>
-  </div>
+    <div class="post">
+      <h3>Post 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+    </div>
+    <div class="fix_icon">
+      <div class="icon1">
+        <a href="accueil.php?id_client=<?php echo $_GET['id_client'] ?>">
+          <span class="iconfont icon-shouye" style="font-size: 50px"></span>
+        </a>
+      </div>
+      <div class="icon1">
+        <a href="parcourir1.php?id_client=<?php echo $_GET['id_client'] ?>">
+          <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
+        </a>
+      </div>
+      <div class="icon1">
+        <a href="notification.php?id_client=<?php echo $_GET['id_client'] ?>">
+          <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
+        </a>
+      </div>
+      <div class="icon1">
+        <a href="panier.php?id_client=<?php echo $_GET['id_client'] ?>">
+          <span class="iconfont icon-caigou" style="font-size: 50px"></span>
+        </a>
+      </div>
+      <div class="icon1">
+        <a href="compt.php?id_client=<?php echo $_GET['id_client'] ?>">
+          <span class="iconfont icon-wode" style="font-size: 50px"></span>
+        </a>
+      </div>
+      <div class="icon1">
+        <a href="https://www.google.com/maps">
+          <span class="iconfont icon-weizhi" style="font-size: 50px"></span>
+        </a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+      </script>
 
-  <div class="fix_icon">
-    <div class="icon1">
-      <a href="accueil.php">
-        <span class="iconfont icon-shouye" style="font-size: 50px"></span>
-      </a>
-    </div>
-    <div class="icon1">
-      <a href="parcourir1.php">
-        <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
-      </a>
-    </div>
-    <div class="icon1">
-      <a href="notification.php">
-        <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
-      </a>
-    </div>
-    <div class="icon1">
-      <a href="panier.php">
-        <span class="iconfont icon-caigou" style="font-size: 50px"></span>
-      </a>
-    </div>
-    <div class="icon1">
-      <a href="compt.php">
-        <span class="iconfont icon-wode" style="font-size: 50px"></span>
-      </a>
-    </div>
-    <div class="icon1">
-      <a href="https://www.google.com/maps">
-        <span class="iconfont icon-weizhi" style="font-size: 50px"></span>
-      </a>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+      </script>
 </body>
 
 </html>

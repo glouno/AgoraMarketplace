@@ -22,6 +22,20 @@
                 <img src="image/logo.png" width="200" align="right" />
             </div>
         </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form action="parcourir1.php" method="get">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Rechercher"
+                            aria-label="Recipient's username" aria-describedby="button-addon2" name="search">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Rechercher</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-4"></div>
+        </div>
     </div>
     <div id="nav" class="container-fluid" style="border: 3px lightcoral outset; border-radius: 10px;">
         <div class="row ">
@@ -44,9 +58,9 @@
             <div class="col-1">
                 <p><b>class:</b></p>
             </div>
-            <div class="col-1"><a href="parcourir3.php?type=1">rares</a></div>
-            <div class="col-2"><a href="parcourir3.php?type=2">hautes de gamme</a></div>
-            <div class="col-1"><a href="parcourir3.php?type=3">réguliers</a></div>
+            <div class="col-1"><a href="parcourir1.php?type_prix='Article rare'">rares</a></div>
+            <div class="col-2"><a href="parcourir1.php?type_prix='Article haut de gamm'">hautes de gamme</a></div>
+            <div class="col-1"><a href="parcourir1.php?type_prix='Article régulier'">réguliers</a></div>
         </div>
         <div class="row">
             <div class="col-1">
@@ -107,9 +121,8 @@
                 echo '<h2>prix:' . $data['prix'] . '€</h2>';
                 echo '</div></div><br></a>';
             }
-        } //end else //fermer la connection 
-        ?>
-        <?php mysqli_close($db_handle);
+        } //end else //fermer la connection
+        mysqli_close($db_handle);
         ?>
     </div>
 
@@ -128,27 +141,27 @@
 
     <div class="fix_icon">
         <div class="icon1">
-            <a href="accueil.php">
+            <a href="accueil.php?id_client=<?php echo $_GET['id_client'] ?>">
                 <span class="iconfont icon-shouye" style="font-size: 50px"></span>
             </a>
         </div>
         <div class="icon1">
-            <a href="parcourir1.php">
+            <a href="parcourir1.php?id_client=<?php echo $_GET['id_client'] ?>">
                 <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
             </a>
         </div>
         <div class="icon1">
-            <a href="notification.php">
+            <a href="notification.php?id_client=<?php echo $_GET['id_client'] ?>">
                 <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
             </a>
         </div>
         <div class="icon1">
-            <a href="panier.php">
+            <a href="panier.php?id_client=<?php echo $_GET['id_client'] ?>">
                 <span class="iconfont icon-caigou" style="font-size: 50px"></span>
             </a>
         </div>
         <div class="icon1">
-            <a href="compt.php">
+            <a href="compt.php?id_client=<?php echo $_GET['id_client'] ?>">
                 <span class="iconfont icon-wode" style="font-size: 50px"></span>
             </a>
         </div>

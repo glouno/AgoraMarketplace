@@ -18,7 +18,16 @@
     />
     <link rel="stylesheet" href="css.css" type="text/css" />
     <link rel="stylesheet" href="icon/iconfont.css" type="text/css" />
+    <script type="text/javascript">
+      function () {
+      }
+    </script>
     <?php
+    if (isset($_GET['id_client'])) {
+      $id_client=$_GET['id_client'];
+    } else {
+      $id_client = 0;
+    }
     //identifier le nom de base de données
     $database = "ag";
     //connectez-vous dans votre BDD
@@ -27,12 +36,24 @@
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
-      $sql = "SELECT * FROM produits WHERE id=   " . $_GET['id'] . "       ";
-      $result = mysqli_query($db_handle, $sql);
-      $data = mysqli_fetch_assoc($result);
+      if (isset($_GET['id'])&& !isset($_GET['id_produit'])) {
+        $sql = "SELECT * FROM produits WHERE id=   " . $_GET['id'] . "       ";
+        $result = mysqli_query($db_handle, $sql);
+        $data = mysqli_fetch_assoc($result);
+      } 
+      elseif (isset($_GET['id_produit'])) {
+        $sql = "SELECT * FROM produits WHERE id=   " . $_GET['id'] . "       ";
+        $result = mysqli_query($db_handle, $sql);
+        $data = mysqli_fetch_assoc($result);
+        $sql1 = "INSERT INTO panier ( id_produit, id_client) VALUES ( " . $_GET['id_produit'] . ", " . $_GET['id_client'] . ")";
+        $retval= mysqli_query($db_handle, $sql1);
+        echo "Add to cart successfully";
+      }
+      else {
+        echo "Database not found";
+      }
     } //end else //fermer la connection ?>
-<?php mysqli_close($db_handle); ?>
-
+    
   </head>
   <body>
     <div id="header" class="container-fluid">
@@ -70,10 +91,14 @@
             Prix:<i><?php echo $data['prix'] ?></i>euros
           </div>
           <br />
+
           <div class="paybutton">
-            <button id="pay1">
-              <h5 class="buttonmot">Meilleure offre</h5>
-            </button>
+            <form action="mod_article.php" method="get">
+              <input type="hidden" name="id_client" value="<?php echo $id_client ?>">
+              <input type="hidden" name="id_produit" value="<?php echo $_GET['id'] ?>">
+              <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+              <input type="submit" value="Ajouter au panier">
+            </form>
           </div>
           <br />
           <div class="paybutton">
@@ -83,7 +108,7 @@
           </div>
           <br />
           <div class="paybutton">
-            <button id="pay3 ">
+            <button id="pay3 " onclick="">
               <h5 class="buttonmot">Achat immédiat</h5>
             </button>
           </div>
@@ -117,37 +142,37 @@
       </footer>
     </div>
     <div class="fix_icon">
-      <div class="icon1">
-        <a href="accueil.php">
-          <span class="iconfont icon-shouye" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="parcourir1.php">
-          <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="notification.php">
-          <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="panier.php">
-          <span class="iconfont icon-caigou" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="compt.php">
-          <span class="iconfont icon-wode" style="font-size: 50px"></span>
-        </a>
-      </div>
-      <div class="icon1">
-        <a href="https://www.google.com/maps">
-          <span class="iconfont icon-weizhi" style="font-size: 50px"></span>
-        </a>
-      </div>
+    <div class="icon1">
+      <a href="accueil.php?id_client=<?php echo $_GET['id_client'] ?>">
+        <span class="iconfont icon-shouye" style="font-size: 50px"></span>
+      </a>
     </div>
+    <div class="icon1">
+      <a href="parcourir1.php?id_client=<?php echo $_GET['id_client'] ?>">
+        <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
+      </a>
+    </div>
+    <div class="icon1">
+      <a href="notification.php?id_client=<?php echo $_GET['id_client'] ?>">
+        <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
+      </a>
+    </div>
+    <div class="icon1">
+      <a href="panier.php?id_client=<?php echo $_GET['id_client'] ?>">
+        <span class="iconfont icon-caigou" style="font-size: 50px"></span>
+      </a>
+    </div>
+    <div class="icon1">
+      <a href="compt.php?id_client=<?php echo $_GET['id_client'] ?>">
+        <span class="iconfont icon-wode" style="font-size: 50px"></span>
+      </a>
+    </div>
+    <div class="icon1">
+      <a href="https://www.google.com/maps">
+        <span class="iconfont icon-weizhi" style="font-size: 50px"></span>
+      </a>
+    </div>
+  </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -160,5 +185,6 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
+    <?php mysqli_close($db_handle); ?>
   </body>
 </html>
