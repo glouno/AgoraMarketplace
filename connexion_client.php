@@ -35,17 +35,6 @@
       </form>
     </div>
   </div>
-  <div id="footer" class="container">
-    <footer>
-      <small>
-        <p align="center">
-          concu par yanT. contact:<a href="mailto:yannot@gmail.com">
-            gmail
-          </a>
-        </p>
-        <p align="center">copyright &copy;2023 | lstest update:19-03-2023</p>
-      </small>
-    </footer>
-  </div>
+
 </body>
 </html>
