@@ -27,6 +27,11 @@
         <div class="button">
           <input type="submit" value="Se connecter">
         </div>
+
+        <div class="address-box">
+            <span class="infos"> <a href="inscription_client.php">Pas encore inscrit(e) ? Inscrivez vous </a> </span>
+          </div>
+
       </form>
     </div>
   </div>

@@ -38,7 +38,7 @@ if (isset($_POST['ajouter']))
           if($exec){
             $message[]='Inscription du  fournisseur validée';
           }else{
-            $message[]='Inscription non Validée ! verifiez tous les champs';
+            $message[]='Inscription non Validée ! Enregistrement existant';
           }
       }
 }
@@ -98,6 +98,7 @@ if (isset($_POST['ajouter']))
         <div class="button">
           <input type="submit" name ="ajouter" id ="ajouter" value="Ajouter">
         </div>
+
       </form>
     </div>
   </div>

@@ -180,6 +180,11 @@ if (isset($_POST['inserer']))
         <div class="button">
           <input type="submit" name ="inserer" id ="inserer" value="S'inscrire">
         </div>
+
+        <div class="address-box">
+            <span class="infos"> <a href="connexion_client.php">Dejà inscrit(e)? Connectez vous </a> </span>
+          </div>
+
       </form>
     </div>
   </div>
