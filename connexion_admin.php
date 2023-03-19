@@ -47,6 +47,17 @@ function securisation($donnees)
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
+
+<?php
+          if(isset($message))
+            {
+              foreach($message as $message)
+                {
+                  echo'<span class ="message">'.$message.'</span>';
+                }
+            }
+          ?>
+
   <div class="container">
     <div class="title">Connexion</div>
     <div class="content">
