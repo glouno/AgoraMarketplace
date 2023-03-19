@@ -65,6 +65,8 @@ if (isset($_POST['inserer']))
             $message[]='Inscription validée';
           }else{
             $message[]='Inscription Non Validée';
+            header("Location: inscription_client.php");
+            exit();
           }
       }
 }
@@ -182,7 +184,11 @@ if (isset($_POST['inserer']))
         </div>
 
         <div class="address-box">
-            <span class="infos"> <a href="connexion_client.php">Dejà inscrit(e)? Connectez vous </a> </span>
+            <span class="lien"> <a href="index.php">Retour vers la page precedente</a> </span>
+          </div>
+
+        <div class="address-box">
+            <span class="lien"> <a href="connexion_client.php">Dejà inscrit(e)? Connectez vous </a> </span>
           </div>
 
       </form>

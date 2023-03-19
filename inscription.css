@@ -82,6 +82,10 @@ form .address-box span.infos{
     margin-bottom: 5px;
   }
 
+  form .address-box span.lien{
+    text-align: center;
+  }
+
   .message{
     display: block;
     background-color: rgb(219, 123, 88) ;

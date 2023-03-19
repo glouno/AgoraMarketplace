@@ -1,3 +1,44 @@
+<?php 
+
+function securisation($donnees)
+{ 
+    $donnees=trim($donnees);
+    $donnees=stripslashes($donnees);
+    $donnees=strip_tags($donnees);
+    return $donnees;
+}
+
+  if (isset($_POST['connexion']))
+  {
+    
+  $username= securisation($_POST['username_login']);
+  $mail= securisation($_POST['mail_login']);
+    $serveur="localhost:3306";
+    $login="root";
+    $password="";
+    $bd="db_agora";
+
+    $connexion=mysqli_connect($serveur,$login,$password,$bd);
+
+    $sql="SELECT * FROM fournisseurs WHERE email='$mail' AND  pseudo='$username'";
+
+    $result= mysqli_query($connexion, $sql);
+
+    $row= mysqli_fetch_array($result);
+
+    if($row['pseudo'] == $username && $row['email'] == $mail)
+    {
+      header("Location: fournisseur.php");
+    }
+    else
+    {
+      $message[]= 'Les identifiants sont errones';
+    }
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -15,12 +56,12 @@
 
             <div class="address-box">
                 <span class="infos">Nom d'utilisateur</span>
-                <input type="text" placeholder="Nom d'utilisateur" name="username_login_clt" required>
+                <input type="text" placeholder="Nom d'utilisateur" name="username_login" required>
               </div>
 
           <div class="address-box">
             <span class="infos">Email</span>
-            <input type="email" placeholder="Votre email" name="mail_login_clt" required>
+            <input type="email" placeholder="Votre email" name="mail_login" required>
           </div>
 
         </div>
