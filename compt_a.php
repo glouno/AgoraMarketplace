@@ -24,11 +24,39 @@
         </div>
         <br><br><br>
         <div id="section" class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <a href="inscriptions_vendeurs.php">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">inscriptions
+                                vendeurs</button>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="Ajout.php?id_fournisseur=1">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">ajouter produit
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <h2>Liste des produits</h2>
+                </div>
+                <div class="col-6">
+                    <h2>Liste des fournisseurs</h2>
+                </div>
+            </div>
+            <br>
             <?php
-            if (isset($_GET['id_fournisseur'])) {
-                $id_fournisseur = $_GET['id_fournisseur'];
+            if (isset($_GET['id_admin'])) {
+                $id_admin = $_GET['id_admin'];
             } else {
-                $id_fournisseur = 0;
+                $id_admin = 0;
             }
             //identifier le nom de base de données
             $database = "ag";
@@ -38,45 +66,116 @@
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
-                if (isset($_GET['id_fournisseur']) && !isset($_GET['sup'])) {
-                    $sql = "select * from produits where id_fournisseur=" . $id_fournisseur . "";
+                if (isset($_GET['id_admin']) && !isset($_GET['suppro']) && !isset($_GET['supfou'])) {
+                    $sql = "select * from produits";
                     $result = mysqli_query($db_handle, $sql);
+                    $sql1 = "select * from fournisseurs";
+                    $result1 = mysqli_query($db_handle, $sql1);
                     //$data = mysqli_fetch_assoc($result);
-                    while ($data = mysqli_fetch_assoc($result)) {
-
-                        echo '<div class="row">';
-                        echo '<div class="col-4"><img src="' . $data['image'] . '" width="300px" height="200px"></div>';
-                        echo '<div class="col-1"></div> ';
-                        echo '<div class="col-5" style="text-align: left;">';
-                        echo '<br><h1>' . $data['nom'] . '</h1><br>';
-                        echo '<h2>prix:' . $data['prix'] . '€</h2>';
-                        echo '</div>';
-                        echo '<div class="col-2">';
-                        echo '<a href="compt_f.php?id_fournisseur=' . $id_fournisseur . "&sup=" . $data['id'] . '">';
-                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
-                        echo '</a></div></div><br>';
-
-                    }
-                } elseif (isset($_GET['id_fournisseur']) && isset($_GET['sup'])) {
-                    $sql = "DELETE FROM produits WHERE id=" . $_GET['sup'] . "";
-                    $result = mysqli_query($db_handle, $sql);
-                    $sql = "select * from produits where id_fournisseur=" . $id_fournisseur . "";
-                    $result = mysqli_query($db_handle, $sql);
-                    //$data = mysqli_fetch_assoc($result);
+                    echo '<div class="row">';
+                    echo '<div class="col-6">';
+                    echo '<div class="row">';
+                    echo '<div class="col-4"><p>id de produit</p></div>';
+                    echo '<div class="col-4"><p>prix</p></div></div> ';
                     while ($data = mysqli_fetch_assoc($result)) {
                         echo '<div class="row">';
-                        echo '<div class="col-4"><img src="' . $data['image'] . '" width="300px" height="200px"></div>';
-                        echo '<div class="col-1"></div> ';
-                        echo '<div class="col-5" style="text-align: left;">';
-                        echo '<br><h1>' . $data['nom'] . '</h1><br>';
-                        echo '<h2>prix:' . $data['prix'] . '€</h2>';
-                        echo '</div>';
-                        echo '<div class="col-2">';
-                        echo '<a href="compt_f.php?id_fournisseur=' . $_GET['id_fournisseur'] . "&sup=" . $data['id'] . '">';
+                        echo '<div class="col-4"><p>' . $data['id'] . '</p></div>';
+                        echo '<div class="col-4"><p>' . $data['prix'] . '</p></div> ';
+                        echo '<div class="col-4">';
+                        echo '<a href="compt_a.php?id_admin=' . $id_admin . "&suppro=" . $data['id'] . '">';
                         echo '<button type="button" class="btn btn-danger">Supprimer</button>';
                         echo '</a></div></div><br>';
-
                     }
+                    echo '</div>';
+                    echo '<div class="col-6">';
+                    echo '<div class="row">';
+                    echo '<div class="col-4"><p>nom</p></div>';
+                    echo '<div class="col-4"><p>email</p></div></div> ';
+                    while ($data1 = mysqli_fetch_assoc($result1)) {
+                        echo '<div class="row">';
+                        echo '<div class="col-4"><p>' . $data1['nom'] . '</p></div>';
+                        echo '<div class="col-4"><p>' . $data1['email'] . '</p></div> ';
+                        echo '<div class="col-4">';
+                        echo '<a href="compt_a.php?id_admin=' . $id_admin . "&supfou=" . $data1['id_fournisseur'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</a></div></div><br>';
+                    }
+                    echo '</div></div>';
+
+                } elseif (!isset($_GET['suppro']) && isset($_GET['suppro'])) {
+                    $sql2 = "DELETE FROM produits WHERE id=" . $_GET['suppro'] . "";
+                    $result2 = mysqli_query($db_handle, $sql2);
+                    $sql = "select * from produits";
+                    $result = mysqli_query($db_handle, $sql);
+                    $sql1 = "select * from fournisseurs";
+                    $result1 = mysqli_query($db_handle, $sql1);
+                    //$data = mysqli_fetch_assoc($result);
+                    echo '<div class="row">';
+                    echo '<div class="col-6">';
+                    echo '<div class="row">';
+                    echo '<div class="col-4"><p>id de produit</p></div>';
+                    echo '<div class="col-4"><p>prix</p></div></div> ';
+                    while ($data = mysqli_fetch_assoc($result)) {
+                        echo '<div class="row">';
+                        echo '<div class="col-4"><p>' . $data['id'] . '</p></div>';
+                        echo '<div class="col-4"><p>' . $data['prix'] . '</p></div> ';
+                        echo '<div class="col-4">';
+                        echo '<a href="compt_a.php?id_admin=' . $id_admin . "&suppro=" . $data['id'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</a></div></div>';
+                    }
+                    echo '</div>';
+                    echo '<div class="col-6">';
+                    echo '<div class="row">';
+                    echo '<div class="col-4"><p>nom</p></div>';
+                    echo '<div class="col-4"><p>email</p></div></div> ';
+                    while ($data1 = mysqli_fetch_assoc($result1)) {
+                        echo '<div class="row">';
+                        echo '<div class="col-4"><p>' . $data1['nom'] . '</p></div>';
+                        echo '<div class="col-4"><p>' . $data1['email'] . '</p></div> ';
+                        echo '<div class="col-4">';
+                        echo '<a href="compt_a.php?id_admin=' . $id_admin . "&supfou=" . $data1['id_fournisseur'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</a></div></div><br>';
+                    }
+                    echo '</div></div>';
+                } elseif (isset($_GET['supfou']) && !isset($_GET['suppro'])) {
+                    $sql2 = "DELETE FROM fournisseurs WHERE id_fournisseur=" . $_GET['supfou'] . "";
+                    $result2 = mysqli_query($db_handle, $sql2);
+                    $sql = "select * from produits";
+                    $result = mysqli_query($db_handle, $sql);
+                    $sql1 = "select * from fournisseurs";
+                    $result1 = mysqli_query($db_handle, $sql1);
+                    //$data = mysqli_fetch_assoc($result);
+                    echo '<div class="row">';
+                    echo '<div class="col-6">';
+                    echo '<div class="row">';
+                    echo '<div class="col-4"><p>id de produit</p></div>';
+                    echo '<div class="col-4"><p>prix</p></div></div> ';
+                    while ($data = mysqli_fetch_assoc($result)) {
+                        echo '<div class="row">';
+                        echo '<div class="col-4"><p>' . $data['id'] . '</p></div>';
+                        echo '<div class="col-4"><p>' . $data['prix'] . '</p></div> ';
+                        echo '<div class="col-4">';
+                        echo '<a href="compt_a.php?id_admin=' . $id_admin . "&suppro=" . $data['id'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</a></div></div><br>';
+                    }
+                    echo '</div>';
+                    echo '<div class="col-6">';
+                    echo '<div class="row">';
+                    echo '<div class="col-3"><p>nom</p></div>';
+                    echo '<div class="col-3"><p>email</p></div></div> ';
+                    while ($data1 = mysqli_fetch_assoc($result1)) {
+                        echo '<div class="row">';
+                        echo '<div class="col-4"><p>' . $data1['nom'] . '</p></div>';
+                        echo '<div class="col-4"><p>' . $data1['email'] . '</p></div> ';
+                        echo '<div class="col-4">';
+                        echo '<a href="compt_a.php?id_admin=' . $id_admin . "&supfou=" . $data1['id_fournisseur'] . '">';
+                        echo '<button type="button" class="btn btn-danger">Supprimer</button>';
+                        echo '</a></div></div><br>';
+                    }
+                    echo '</div></div>';
                 } else {
                     echo "erreur";
                 }
@@ -86,18 +185,7 @@
 
         </div>
         <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <a href="Ajout.php?id_fournisseur=<?php echo $_GET['id_fournisseur'] ?>">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Ajout de marchandises</button>
-                    </a>
-                </div>
-                <div class="col-4"></div>
-            </div>
-        </div>
-        <br>
+
 
         <div id="footer" class="container">
             <footer>

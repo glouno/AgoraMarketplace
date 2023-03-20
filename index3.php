@@ -17,7 +17,7 @@
     if (isset($_GET['login_mail_clt']) && isset($_GET['login_mdp_clt'])) {
         $login_mail_clt = $_GET['login_mail_clt'];
         $login_mdp_clt = $_GET['login_mdp_clt'];
-        $sql = "SELECT * FROM administrateur WHERE email = '$login_mail_clt' AND password = '$login_mdp_clt'";
+        $sql = "SELECT * FROM administrateur WHERE email = '$login_mail_clt' AND mdp = '$login_mdp_clt'";
         $result = mysqli_query($db_handle, $sql);
         if (mysqli_num_rows($result) == 0) {
             echo "administrateur not found";

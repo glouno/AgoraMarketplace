@@ -104,8 +104,14 @@
           </div>
           <br />
           <div class="paybutton">
-            <button id="pay2">
-              <h5 class="buttonmot">Transaction client-vendeur</h5>
+            <form action="bidding.php" method="get">
+              <input type="hidden" name="id_client" value="<?php echo $id_client ?>">
+              <input type="hidden" name="id_produit" value="<?php echo $_GET['id'] ?>">
+              <input type="number" name="prix">
+              <button id="pay2" type='submit'>
+              <h5 class="buttonmot">bidding</h5>
+            </button>
+            </form>
             </button>
           </div>
           <br />
