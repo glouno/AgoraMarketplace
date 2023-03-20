@@ -3,7 +3,17 @@ create table administrateur
     id_admin int auto_increment
         primary key,
     email    varchar(50)  null,
-    password varchar(100) null
+    mdp      varchar(100) null
+);
+
+create table bids
+(
+    id         int auto_increment
+        primary key,
+    id_client  int   null,
+    id_produit int   null,
+    prix       float null,
+    bid_time   text  null
 );
 
 create table client
@@ -30,10 +40,9 @@ create table commande
 (
     id_commande int auto_increment
         primary key,
-    prix_total  double       not null,
-    etat_cmd    varchar(20)  null,
-    nom_client  varchar(100) not null,
-    id_client   int          not null,
+    etat_cmd    varchar(20) null,
+    id_client   int         not null,
+    id_produit  int         not null,
     constraint id
         unique (id_commande)
 );
@@ -41,19 +50,14 @@ create table commande
 create index id_client
     on commande (id_client);
 
-create index nom_client
-    on commande (nom_client);
-
 create table fournisseurs
 (
     id_fournisseur int auto_increment
         primary key,
     nom            varchar(100)   not null,
-    pseudo         varchar(20)    not null,
     phone          varchar(100)   not null,
-    addresse       varchar(10000) null,
-    password       varchar(100)   not null,
-    image          varchar(1000)  null,
+    email          varchar(10000) null,
+    mdp            varchar(100)   not null,
     constraint id
         unique (id_fournisseur)
 );
@@ -73,14 +77,15 @@ create index id_client
 
 create table produits
 (
-    id           int auto_increment
+    id             int auto_increment
         primary key,
-    nom          varchar(100)   not null,
-    prix         float          not null,
-    types        varchar(20)    null,
-    descriptions varchar(10000) null,
-    type_prix    varchar(20)    null,
-    image        varchar(1000)  null,
+    nom            varchar(100)   not null,
+    prix           float          not null,
+    types          varchar(20)    null,
+    descriptions   varchar(10000) null,
+    type_prix      varchar(20)    null,
+    image          varchar(1000)  null,
+    id_fournisseur int            null,
     constraint id
         unique (id)
 )
