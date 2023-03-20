@@ -22,8 +22,15 @@
     //si le BDD existe, faire le traitement
     if ($db_found) {
         if (isset($_GET['id_client'])) {
-            $sql = "delete from panier where id_client=1";
-            $result = mysqli_query($db_handle, $sql);
+            $sql1 = "select id_produit, nom ,prix,image,id_client from panier,produits where panier.id_produit = produits.id and id_client=" . $_GET['id_client'] . "";
+            $result1 = mysqli_query($db_handle, $sql1);
+            while ($data = mysqli_fetch_assoc($result1)) {
+                $sql2 = "INSERT INTO commande ( id_produit, id_client,etat_cmd) VALUES ( " . $data['id_produit'] . ", " . $data['id_client'] . ",'en cours de traitement')";
+                $result2 = mysqli_query($db_handle, $sql2);
+            }
+
+            $sql3 = "delete from panier where id_client=" . $_GET['id_client'] . "";
+            $result3 = mysqli_query($db_handle, $sql3);
 
         } else {
             echo "erreur";

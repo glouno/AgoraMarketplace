@@ -29,7 +29,7 @@
   </div>
   <br><br><br>
   <div id="nav" class="container" style="height: 600px">
-    <a href="connexion_client1.html">
+    <a href="connexion_client.html">
       <div class="container-fluid" style="border: 6px lightblue outset;border-radius: 10px;">
         <h1>j'ai un compte client</h1>
       </div>
@@ -41,23 +41,18 @@
       </div>
     </a>
     <br>
-    <a href="">
+    <a href="connexion_admin.html">
       <div class="container-fluid" style="border: 6px lightblue outset;border-radius: 10px;">
         <h1>je suis administrateur</h1>
       </div>
     </a>
     <br>
-    <a href="inscription_client.html">
+    <a href="inscriptions_clients.php">
       <div class="container-fluid" style="border: 6px lightblue outset;border-radius: 10px;">
         <h1>Créer un compte client</h1>
       </div>
     </a>
     <br>
-    <a href="inscriptions_vendeurs.html">
-      <div class="container-fluid" style="border: 6px lightblue outset;border-radius: 10px;">
-        <h1>Créer un compte fournisseur</h1>
-      </div>
-    </a>
   </div>
 
   <div id="footer" class="container">

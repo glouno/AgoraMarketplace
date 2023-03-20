@@ -47,6 +47,7 @@
       </div>
     </div>
   </div>
+  <br><br>
   <div id="nav" class="container">
     <div class="row">
       <div class="col-1"></div>
@@ -79,11 +80,12 @@
           <img src="image/compte.png" id="imgTaille1" />
         </a>
       </div>
-
       <div class="col-2"></div>
     </div>
   </div>
+  <br>
   <div id="section" class="container"></div>
+  <br>
   <div id="footer" class="container">
     <footer>
       <small>
@@ -96,30 +98,30 @@
       </small>
     </footer>
   </div>
-
+  <br>
   <div class="fix_icon">
     <div class="icon1">
-      <a href="accueil.php?id_client=<?php echo $_GET['id_client'] ?>">
+      <a href="accueil.php?id_client=<?php echo $id_client ?>">
         <span class="iconfont icon-shouye" style="font-size: 50px"></span>
       </a>
     </div>
     <div class="icon1">
-      <a href="parcourir1.php?id_client=<?php echo $_GET['id_client'] ?>">
+      <a href="parcourir1.php?id_client=<?php echo $id_client ?>">
         <span class="iconfont icon-gongneng" style="font-size: 50px"></span>
       </a>
     </div>
     <div class="icon1">
-      <a href="notification.php?id_client=<?php echo $_GET['id_client'] ?>">
+      <a href="notification.php?id_client=<?php echo $id_client ?>">
         <span class="iconfont icon-xiaoxi2" style="font-size: 50px"></span>
       </a>
     </div>
     <div class="icon1">
-      <a href="panier.php?id_client=<?php echo $_GET['id_client'] ?>">
+      <a href="panier.php?id_client=<?php echo $id_client ?>">
         <span class="iconfont icon-caigou" style="font-size: 50px"></span>
       </a>
     </div>
     <div class="icon1">
-      <a href="compt.php?id_client=<?php echo $_GET['id_client'] ?>">
+      <a href="compt.php?id_client=<?php echo $id_client ?>">
         <span class="iconfont icon-wode" style="font-size: 50px"></span>
       </a>
     </div>

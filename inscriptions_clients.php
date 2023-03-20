@@ -37,15 +37,15 @@ if (isset($_POST['inserer'])) {
   } else {
 
     //Configuration Bd
-    $serveur = "localhost:3306";
+    $serveur = "localhost:3308";
     $login = "root";
     $password = "";
-    $bd = "db_agora";
+    $bd = "ag";
 
     $connexion = mysqli_connect($serveur, $login, $password, $bd);
 
     //Insertion_Bd
-    $requete = "INSERT INTO clients(nomprenoms, nomutilisateur, sexe, email, numtel, adresse, mdp, typecartepaiement, Numcarte, nomcarte, dateexpcarte, codeseccarte)
+    $requete = "INSERT INTO client (nomprenoms, nomutilisateur, sexe, email, numtel, adresse, mdp, typecartepaiement, Numcarte, nomcarte, dateexpcarte, codeseccarte)
           VALUES('$nom_prenoms', '$nom_utilisateur_clt', '$selection_genre', '$email_clt', '$numtel_clt', '$adr_clt', '$mdp_clt', '$selection_carte', '$num_carte_clt', '$nom_carte_clt', '$dt_exp_carte', '$code_sec_clt')";
 
     $exec = mysqli_query($connexion, $requete);
