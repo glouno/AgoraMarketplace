@@ -24,6 +24,7 @@ if ($db_found) {
         header("refresh:5;url=mod_article.php?id_client=" . $id_client . "&id=" . $id_produit);
     } else {
         echo "<h1>Votre enchère est inférieure à l'enchère actuelle</h1>";
+        echo "<h1>L'enchère maximale actuelle est de " . $prixmax . " euros</h1>";
         echo "<h2>La page reviendra après 5 secondes</h2>";
         header("refresh:5;url=mod_article.php?id_client=" . $id_client . "&id=" . $id_produit);
     }

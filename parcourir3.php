@@ -44,7 +44,7 @@
                 <div class="col-1">
                     <p><strong>type:</strong></p>
                 </div>
-                <div class="col-1"><a href="parcourir1.php?&id_client=<?php echo $id_client ?>">tout
+                <div class="col-1"><a href="parcourir3.php?&id_client=<?php echo $id_client ?>">tout
                         parcourir</a></div>
                 <div class="col-1"><a
                         href="parcourir3.php?type='ameublement'&id_client=<?php echo $id_client ?>">ameublement</a>

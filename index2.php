@@ -26,7 +26,7 @@
     $sql = "SELECT * FROM client WHERE email = '$login_mail_clt' AND mdp = '$login_mdp_clt'";
     $result = mysqli_query($db_handle, $sql);
     if (mysqli_num_rows($result) == 0) {
-      echo "Client not found";
+      header("refresh:0;url=shibai.php");
     } else {
       $data = mysqli_fetch_assoc($result);
       $id_client = $data['id_client'];

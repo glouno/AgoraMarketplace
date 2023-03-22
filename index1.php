@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+</head>
+
+<body>
     <?php
     //identifier le nom de base de données
     $database = "ag";
@@ -21,18 +25,17 @@
         $result = mysqli_query($db_handle, $sql);
         if (mysqli_num_rows($result) == 0) {
             echo "fournisseur not found";
+            echo "<h1>vous n'avait pas de compte. Merci de créer un compte</h1>";
+            header("refresh:10;url=connexion_fournisseur.html");
         } else {
             $data = mysqli_fetch_assoc($result);
             $id_fournisseur = $data['id_fournisseur'];
-            header("refresh:1;url=compt_f.php?id_fournisseur=" . $id_fournisseur);
+            header("refresh:3;url=compt_f.php?id_fournisseur=" . $id_fournisseur);
+            echo "<h1>Connectez-vous avec succès, passez à la page après une seconde</h1>";
 
         }
     }
     ?>
-</head>
-
-<body>
-    <h1>Connectez-vous avec succès, passez à la page après une seconde</h1>
 </body>
 
 </html>
