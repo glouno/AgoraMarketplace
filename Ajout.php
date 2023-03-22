@@ -61,6 +61,17 @@
             </form>
         </div>
     </div>
+    <footer>
+        <small>
+            <p align="center">
+                concu par zhan tchalla kuate beglin. contact:mail :<a href="mailto:1472804183@qq.com">
+                    1472804183@qq.com
+                </a>
+            <p>tel : +33(0)652811128 </p>
+            </p>
+            <p align="center"> Tous droits reserves.copyright &copy;2023 | lstest update:21-03-2023</p>
+        </small>
+    </footer>
 </body>
 
 </html>

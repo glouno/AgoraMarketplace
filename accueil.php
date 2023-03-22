@@ -88,19 +88,15 @@
     <footer>
       <small>
         <p align="center">
-          concu par yezhan. contact:<a href="mailto:1472804183@qq.com">
+          concu par zhan tchalla kuate beglin. contact:mail :<a href="mailto:1472804183@qq.com">
             1472804183@qq.com
           </a>
+        <p>tel : +33(0)652811128 </p>
         </p>
-        <p align="center">copyright &copy;2023 | lstest update:28-02-2023</p>
+        <p align="center"> Tous droits reserves.copyright &copy;2023 | lstest update:21-03-2023</p>
       </small>
     </footer>
-    <div class="post">
-      <h3>Post 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.</p>
-    </div>
+
     <div class="fix_icon">
       <div class="icon1">
         <a href="accueil.php?id_client=<?php echo $_GET['id_client'] ?>">

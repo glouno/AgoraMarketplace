@@ -26,16 +26,27 @@
         if (mysqli_num_rows($result) == 0) {
             echo "fournisseur not found";
             echo "<h1>vous n'avait pas de compte. Merci de créer un compte</h1>";
-            header("refresh:10;url=connexion_fournisseur.html");
+            header("refresh:5;url=connexion_fournisseur.html");
         } else {
             $data = mysqli_fetch_assoc($result);
             $id_fournisseur = $data['id_fournisseur'];
-            header("refresh:3;url=compt_f.php?id_fournisseur=" . $id_fournisseur);
-            echo "<h1>Connectez-vous avec succès, passez à la page après une seconde</h1>";
+            header("refresh:2;url=compt_f.php?id_fournisseur=" . $id_fournisseur);
+            echo "<h1>Connectez-vous avec succès, passez à la page après 2 seconde</h1>";
 
         }
     }
     ?>
+    <footer>
+        <small>
+            <p align="center">
+                concu par zhan tchalla kuate beglin. contact:mail :<a href="mailto:1472804183@qq.com">
+                    1472804183@qq.com
+                </a>
+            <p>tel : +33(0)652811128 </p>
+            </p>
+            <p align="center"> Tous droits reserves.copyright &copy;2023 | lstest update:21-03-2023</p>
+        </small>
+    </footer>
 </body>
 
 </html>

@@ -36,6 +36,18 @@
 
 <body>
     <h1>Le produit est ajouté avec succès et la page sera redirigée après 2 secondes</h1>
+    <br><br>  <br><br>   <br><br><br><br>  
+    <footer>
+      <small>
+        <p align="center">
+          concu par zhan tchalla kuate beglin. contact:mail :<a href="mailto:1472804183@qq.com">
+            1472804183@qq.com
+          </a>
+        <p>tel : +33(0)652811128 </p>
+        </p>
+        <p align="center"> Tous droits reserves.copyright &copy;2023 | lstest update:21-03-2023</p>
+      </small>
+    </footer>
 </body>
 
 </html>

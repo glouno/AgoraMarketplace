@@ -58,7 +58,7 @@
       </div>
       <div class="col-1"></div>
       <div class="col-md-1" id="button1">
-        <a href="parcourir.php?id_client=<?php echo $id_client ?>">
+        <a href="parcourir1.php?id_client=<?php echo $id_client ?>">
           <img src="image/parcourir.png" id="imgTaille1" />
         </a>
       </div>
@@ -90,11 +90,12 @@
     <footer>
       <small>
         <p align="center">
-          concu par yezhan. contact:<a href="mailto:1472804183@qq.com">
+          concu par zhan tchalla kuate beglin. contact:mail :<a href="mailto:1472804183@qq.com">
             1472804183@qq.com
           </a>
+        <p>tel : +33(0)652811128 </p>
         </p>
-        <p align="center">copyright &copy;2023 | lstest update:28-02-2023</p>
+        <p align="center"> Tous droits reserves.copyright &copy;2023 | lstest update:21-03-2023</p>
       </small>
     </footer>
   </div>

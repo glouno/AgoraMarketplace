@@ -43,9 +43,22 @@
 </head>
 
 <body>
-    <h1> payer acceces !</h1>
+    <h1> Validation de l'achat !</h1>
     <br>
-    <h2>vous allez etre rediriger vers la page de parcourir dans 3s</h2>
+    <h2>Redirection vers la page Parcourir dans 3s</h2>
+    <br><br><br><br><br><br>
+    <footer>
+        <small>
+            <p align="center">
+                concu par zhan tchalla kuate beglin. contact:mail :<a href="mailto:1472804183@qq.com">
+                    1472804183@qq.com
+                </a>
+            <p align="center"
+            >tel : +33(0)652811128 </p>
+            </p>
+            <p align="center"> Tous droits reserves.copyright &copy;2023 | lstest update:21-03-2023</p>
+        </small>
+    </footer>
 </body>
 
 </html>
